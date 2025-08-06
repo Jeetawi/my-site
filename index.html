@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/imgs/favicon.svg" type="image/svg+xml">
+    <title>Ammar Arman</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Plus+Jakarta+Sans:wght@400;500&display=swap');
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(125deg, #000428 0%, #004e92 100%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden;
+        }
+        .modern-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 54px 48px;
+            text-align: center;
+            max-width: 420px;
+            width: 95vw;
+            position: relative;
+            animation: fadeIn 1.2s cubic-bezier(.39,.575,.565,1) both;
+        }
+        .modern-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 2px;
+            background: linear-gradient(125deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        .modern-illustration {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 32px;
+            display: block;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.15));
+            animation: float 3s ease-in-out infinite;
+        }
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #fff, #8ab4f8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+        .tagline {
+            margin-top: 24px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @media (max-width: 600px) {
+            .modern-card { 
+                padding: 40px 24px;
+                border-radius: 20px;
+            }
+            h1 { 
+                font-size: 1.8rem; 
+            }
+            .modern-illustration { 
+                width: 65px;
+                height: 65px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="modern-card">
+        <svg class="modern-illustration" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="48" stroke="url(#gradient)" stroke-width="2"/>
+            <circle cx="50" cy="50" r="38" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M35 65 C42 45, 58 45, 65 65" stroke="#8ab4f8" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="50" cy="35" r="10" fill="url(#gradient)"/>
+            <defs>
+                <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#fff"/>
+                    <stop offset="100%" stop-color="#8ab4f8"/>
+                </linearGradient>
+            </defs>
+        </svg>
+        <h1>Building Something Amazing</h1>
+        <p>We're crafting a new digital experience.<br>Stay tuned for the reveal.</p>
+        <div class="tagline">Ammar Arman &mdash; 2025</div>
+    </div>
+</body>
+</html>
